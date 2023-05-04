@@ -32,9 +32,8 @@ import tbot
 @app.route('/', methods=['GET'])
 def tet() -> str:
     """Redirect to https://t.me/Googl_Bard_bot."""
-    # return "<meta http-equiv='refresh' content='0; url=https://t.me/Googl_Bard_bot'>"
-    return redirect(url_for('https://t.me/Googl_Bard_bot'))
-
+    return "<meta http-equiv='refresh' content='0; url=https://t.me/Googl_Bard_bot'>"
+    
 @app.route('/', methods=['POST'])
 def index() -> Any:
     """Handle incoming webhook messages."""
