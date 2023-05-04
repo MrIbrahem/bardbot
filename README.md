@@ -1,5 +1,5 @@
 Bard Telegram Bot
-
+Live at: https://t.me/Googl_Bard_bot
 # environ
 * TELEGRAM_BOT_TOKEN
 * BARD_TOKEN
