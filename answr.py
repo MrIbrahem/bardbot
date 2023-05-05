@@ -2,10 +2,10 @@
 
 import os
 import sys
-from Bard import Chatbot
+from Bard1 import Chatbot
 
 try:
-    BARD_TOKEN = os.environ['BARD_TOKEN']
+    BARD_TOKEN = 'WAgIxh83Q8lxop9m7wvHE74hwSvWA1EVE4OUlf_iNppmvRhfYb1S7Kez05EHyhqSAxLQ7A.'#os.environ['BARD_TOKEN']
     if 'de' in sys.argv:
         print(f'BARD_TOKEN: {BARD_TOKEN}')
 except Exception as e:
