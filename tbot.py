@@ -2,7 +2,7 @@
 """
 
 """
-import answ
+import answr
 from datetime import datetime, timezone
 from typing import Any
 from flask import Response
@@ -51,7 +51,7 @@ class MyBot:
         """
         Retrieves an answer based on the message text and sends it as a message.
         """
-        answer = answ.get_answer(self.msg_text)
+        answer = answr.get_answer(self.msg_text)
         self.bot_send_message(answer)
 
     def read_message(self) -> bool:
