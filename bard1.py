@@ -92,7 +92,7 @@ class Chatbot:
         SNlM0e = re.search(r"SNlM0e\":\"(.*?)\"", resp.text)
         if not SNlM0e:
             print("Could not find SNlM0e")
-            print(resp.text.split('TSDtV')[0])
+            print(resp.text.split('window.dataLayer')[0])
         SNlM0e = SNlM0e.group(1)
         return SNlM0e
 
