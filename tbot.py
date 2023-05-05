@@ -2,15 +2,14 @@
 """
 
 """
+import answ
+from datetime import datetime, timezone
 from typing import Any
 from flask import Response
 import json
 import sys
 
 sys.dont_write_bytecode = True
-from datetime import datetime, timezone
-
-import answ
 
 
 class MyBot:
@@ -71,7 +70,7 @@ class MyBot:
         self.msg_text = self.msg_text[3:]
         if self.msg_text.strip() == "":
             return False
-        
+
         return True
 
     def get_message_age(self) -> float:
@@ -119,7 +118,8 @@ class MyBot:
         message = self.update.message
 
         if self.timeout():
-            self.bot_send_message("Timeout! Please use /start to restart the bot.")
+            self.bot_send_message(
+                "Timeout! Please use /start to restart the bot.")
             return False
 
         chat_ = getattr(message, "chat", None)

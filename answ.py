@@ -1,9 +1,19 @@
 #!/usr/bin/env python
 
 import os
+import sys
 from Bard import Chatbot
 
-chatbot = Chatbot(os.environ.get("BARD_TOKEN"))
+try:
+    BARD_TOKEN = os.environ['BARD_TOKEN']
+    if 'de' in sys.argv:
+        print(f'BARD_TOKEN: {BARD_TOKEN}')
+except Exception as e:
+    print(f"ERROR: Cannot get token from environment:{e}")
+    sys.exit(1)
+
+chatbot = Chatbot(BARD_TOKEN)
+
 
 def get_answer(message: str) -> str:
     """
