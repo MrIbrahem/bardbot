@@ -89,7 +89,11 @@ class Chatbot:
         # Find "SNlM0e":"<ID>"
         if resp.status_code != 200:
             raise Exception("Could not get Google Bard")
-        SNlM0e = re.search(r"SNlM0e\":\"(.*?)\"", resp.text).group(1)
+        SNlM0e = re.search(r"SNlM0e\":\"(.*?)\"", resp.text)
+        if not SNlM0e:
+            print("Could not find SNlM0e")
+            print(resp.text)
+        SNlM0e = SNlM0e.group(1)
         return SNlM0e
 
     def ask(self, message: str) -> dict:
