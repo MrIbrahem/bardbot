@@ -85,15 +85,11 @@ class Chatbot:
         self.SNlM0e = self.__get_snlm0e()
 
     def __get_snlm0e(self):
-        resp = self.session.get(url="https://bard.google.com/", timeout=10)
+        resp = self.session.get(url="https://bard.google.com/faq", timeout=10)
         # Find "SNlM0e":"<ID>"
         if resp.status_code != 200:
             raise Exception("Could not get Google Bard")
-        SNlM0e = re.search(r"SNlM0e\":\"(.*?)\"", resp.text)
-        if not SNlM0e:
-            print("Could not find SNlM0e")
-            print(resp.text.split('window.dataLayer')[0])
-        SNlM0e = SNlM0e.group(1)
+        SNlM0e = re.search(r"SNlM0e\":\"(.*?)\"", resp.text).group(1)
         return SNlM0e
 
     def ask(self, message: str) -> dict:
