@@ -2,7 +2,7 @@
 
 import os
 import sys
-from bard1 import Chatbot
+from Bard import Chatbot
 
 try:
     BARD_TOKEN = os.environ['BARD_TOKEN']
